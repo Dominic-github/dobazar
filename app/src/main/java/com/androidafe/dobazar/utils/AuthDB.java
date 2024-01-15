@@ -6,8 +6,6 @@ import android.content.SharedPreferences;
 
 public class AuthDB {
     private String username;
-
-    private int userId;
     private Context context;
 
     public AuthDB(Context context) {

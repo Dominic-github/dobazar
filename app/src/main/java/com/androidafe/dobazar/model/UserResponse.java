@@ -4,10 +4,7 @@ public class UserResponse {
     private int code;
     private String msg;
 
-    private int id;
-
-    public UserResponse(int id,int code, String msg) {
-        this.id = id;
+    public UserResponse(int code, String msg) {
         this.code = code;
         this.msg = msg;
     }
@@ -18,14 +15,6 @@ public class UserResponse {
 
     public void setCode(int code) {
         this.code = code;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getMsg() {
