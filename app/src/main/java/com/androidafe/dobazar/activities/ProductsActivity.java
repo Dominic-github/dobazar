@@ -60,10 +60,16 @@ public class ProductsActivity extends AppCompatActivity {
                     for (ProductModel pModel :models){
 
                         int pCatID = pModel.getCatId();
-                        if (catID == pCatID){
+                        if(catID == 1){
                             productModels.add(pModel);
                             foundProducts = true;
+                        }else{
+                            if (catID == pCatID){
+                                productModels.add(pModel);
+                                foundProducts = true;
+                            }
                         }
+
 
                     }
                     if (foundProducts) {

@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.SliderViewHolder>{
 
 
-    private static final int MAX_ITEMS_TO_DISPLAY = 5;
+    private static final int MAX_ITEMS_TO_DISPLAY = 35;
     ArrayList<ProductModel> productModels;
     Context context;
 
