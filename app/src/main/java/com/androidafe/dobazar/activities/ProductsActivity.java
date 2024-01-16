@@ -35,7 +35,7 @@ public class ProductsActivity extends AppCompatActivity {
         binding.error.setVisibility(View.GONE);
 
 
-        products = new CustomProducts(productModels,getApplicationContext());
+        products = new CustomProducts(productModels, ProductsActivity.this);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL,false);
         binding.proRecylerView.setLayoutManager(gridLayoutManager);
         binding.proRecylerView.setAdapter(products);

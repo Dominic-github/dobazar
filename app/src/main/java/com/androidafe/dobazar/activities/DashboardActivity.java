@@ -77,7 +77,7 @@ public class DashboardActivity extends AppCompatActivity {
 
         productAdapter = new ProductAdapter(this,products);
 
-        RecyclerView.LayoutManager gridLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.HORIZONTAL, false);
+        RecyclerView.LayoutManager gridLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
         binding.bestSellingPlists.setLayoutManager(gridLayoutManager);
         binding.bestSellingPlists.setAdapter(productAdapter);
         getProducts();

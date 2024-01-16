@@ -1,6 +1,7 @@
 package com.androidafe.dobazar.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.androidafe.dobazar.R;
+import com.androidafe.dobazar.activities.DetailActivity;
 import com.androidafe.dobazar.databinding.ItemCardLayoutBinding;
 import com.androidafe.dobazar.model.ProductModel;
 import com.bumptech.glide.Glide;
@@ -38,11 +40,29 @@ public class CustomProducts extends RecyclerView.Adapter<CustomProducts.MyViewHo
         holder.binding.productDesc.setText(model.getpDesc());
         Glide.with(context).load(model.getpImage()).into(holder.binding.productImg);
         holder.binding.productPrice.setText(String.valueOf(model.getpPrice()) + " vnd");
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, DetailActivity.class);
+                intent.putExtra("pName", model.getpName());
+                intent.putExtra("pDesc", model.getpDesc());
+                intent.putExtra("pPrice", model.getpPrice());
+                intent.putExtra("pImage", model.getpImage());
+                context.startActivity(intent);
+
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return modelList.size();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return super.getItemViewType(position);
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
