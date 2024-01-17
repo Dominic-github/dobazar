@@ -18,6 +18,9 @@ import com.androidafe.dobazar.room.Carts;
 import com.androidafe.dobazar.utils.AuthDB;
 import com.bumptech.glide.Glide;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -124,8 +127,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         });
     }
 
-    public double calculateTotalPrice() {
-        double totalPrice = 0.0;
+    public int calculateTotalPrice() {
+        int totalPrice = 0;
         for (Carts cart : carts) {
             totalPrice += cart.getProductPrice();
         }

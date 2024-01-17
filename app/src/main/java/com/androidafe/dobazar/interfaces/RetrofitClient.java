@@ -33,13 +33,16 @@ public interface RetrofitClient {
             @Field("password") String password
     );
 
-    @FormUrlEncoded
-    @POST("admin/addOrder.php")
-    Call<UserResponse> addOrder(
-            @Field("username") String username,
-            @Field("password") String password
-    );
 
+    @FormUrlEncoded
+    @POST("admin/order.php")
+    Call<UserResponse> addOrder(
+            @Field("userid") int userid,
+            @Field("amount") int amount,
+            @Field("orderImage") String orderImage,
+            @Field("quantity") int[] quantity,
+            @Field("productIdList") String productIdList
+    );
 
     @GET("admin/products.php")
     Call<ArrayList<ProductModel>> getProducts();

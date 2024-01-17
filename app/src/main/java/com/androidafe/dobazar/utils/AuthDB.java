@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 public class AuthDB {
+
+    private  int userId;
     private String username;
     private Context context;
 
@@ -19,6 +21,11 @@ public class AuthDB {
         }
         return username;
     }
+
+    public int getUserId(){
+        return userId;
+    }
+
 
     public boolean isSameUser() {
         SharedPreferences preferences = context.getSharedPreferences("dbStatus", Context.MODE_PRIVATE);

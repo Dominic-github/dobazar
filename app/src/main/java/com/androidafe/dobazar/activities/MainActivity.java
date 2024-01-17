@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         mainBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(mainBinding.getRoot());
 
+
         //reference
         loginUserName = findViewById(R.id.loginEmail);
         loginPass = findViewById(R.id.loginPass);
@@ -80,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
                             SharedPreferences sharedPreferences = getSharedPreferences("status", MODE_PRIVATE);
                             SharedPreferences.Editor editor = sharedPreferences.edit();
                             editor.putString("userName",userName);
+                            editor.putInt("userId",userResponse.getId());
                             editor.putBoolean("loginStatus",true);
                             editor.apply();
 

@@ -29,10 +29,9 @@ public class OrderSuccess extends AppCompatActivity {
     ImageView back;
     Button backToHomeBtn;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_success);
         back = findViewById(R.id.back);
